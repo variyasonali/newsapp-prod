@@ -1,34 +1,30 @@
 <div class="mainSidebar">
-    <div class="menu">        
-        <button class="mat-raised-button button" color="warn" (click)="onSelect(section)">
-                {{section.sectionName}}
-        </button>
-    </div>
+  <div class="icons">
+    <div class="mainIcon">
+      <span style="color:dodgerblue">
+        
+        <i class="fas fa-home fa-3x"></i>
+        
+      </span>  
+      </div>
+    
+    
+  </div>
 
-<mat-accordion>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <div *ngFor="let section of sections ">
-            <button class="mat-raised-button" color="warn" (click)="onSelect(section)">
-              {{section.sectionName}}
-            </button>
-          </div>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-  
-      <mat-form-field>
-        <input matInput placeholder="First name">
-      </mat-form-field>
-  
-      <mat-form-field>
-        <input matInput placeholder="Age">
-      </mat-form-field>
-    </mat-expansion-panel>
-    <mat-expansion-panel (opened)="panelOpenState = true"
-                         (closed)="panelOpenState = false">
-   
- 
-    </mat-expansion-panel>
-  </mat-accordion>
+  <div class="menu">
+
+    <div class="sidebar" *ngFor="let Section of sections">
+      <button class="btn btn-primary" (click)="onSelect(subSection)" *ngIf="subSection !=''">
+
+        {{Section.sectionName}}
+
+      </button>
+
+    </div>
+  </div>
 </div>
+<!-- </mat-card-content>
+
+    <span class="iconMenu" style="color: tomato"><i (click)="openDialog()" class="fas fa-list fa-2x lineIcome " ></i>
+      <h1 class="title" >SweetVish</h1>
+    </span> -->

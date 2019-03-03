@@ -1,16 +1,11 @@
-import { Component, OnInit, ViewChild, ViewChildren, Input ,inject} from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NewsService } from '../news.service';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
-// import { stringify } from '@angular/core/src/render3/util';
-import { variable } from '@angular/compiler/src/output/output_ast';
+
 import 'rxjs/Rx';
 import{SectionNewsComponent} from '../section-news/section-news.component';
-import { sectionNewsItem } from '../sectionNews';
-import { ElementRef } from '@angular/core';
-import { stringify } from '@angular/core/src/util';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+
+import {MatDialog} from '@angular/material';
 export interface DialogData {
   animal: string;
   name: string;
