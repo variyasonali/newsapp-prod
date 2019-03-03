@@ -1,0 +1,26 @@
+.body {
+  background-color: yellow;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 80%;
+      grid-template-columns: auto 80%;
+  -ms-grid-rows: 15% auto;
+      grid-template-rows: 15% auto;
+      grid-template-areas: "mainHeader mainHeader" "mainSidebar  mainContent" mainHeader;
+ 
+}
+
+.body mainSidebar {
+ 
+  grid-area: mainSidebar;
+  background-color: red;
+  border: black 2px solid;
+}
+
+.body mainContent {
+ 
+  grid-area: mainContent;
+  background-color: gray;
+  border: black 2px solid;
+}
+/*# sourceMappingURL=app.component.css.map */

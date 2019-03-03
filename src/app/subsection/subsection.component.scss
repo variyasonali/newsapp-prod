@@ -1,0 +1,110 @@
+
+//   .grid {
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     grid-gap: 10px;
+// }
+// .span-row-9{grid-row: span 9 / auto;}  
+
+// .side{
+//     .navigation {
+//     display: inline-block;
+//     width: 100%;
+    
+//     position: fixed;
+//     // z-index: 1;
+//     }
+//     .sectionDetail{
+    
+//         display: inline-block;
+//         margin: 2px;
+//         // margin-top: 25px;
+//     }
+    
+    
+// }
+.mainHeaderContent {
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-rows: auto auto;
+        grid-gap: 8px;
+       
+        grid-template-areas: 
+        " topnav"
+        "sectionDetail";
+        
+   
+
+    .topnav {
+        grid-area: topnav;
+        background-color:whitesmoke;
+        overflow: visible;
+        margin: 0px;
+        
+            .content{
+                display: inline-block; 
+                text-decoration: none;
+                padding: 0px;
+            
+                .rowData {
+                    // background-color: whitesmoke;
+                    display:inline-block;
+                    color: white;
+                    text-transform:capitalize;
+                    text-align: center;
+                    margin: 2px;
+                    text-decoration: none;
+                    font-size: 17px;
+                
+                    .rowData :hover {
+                        background-color: gray;
+                        color:gray;
+                        text-decoration: antiquewhite;
+                    }
+                }
+            }
+    }
+    .sectionDetail{
+        grid-area: sectionDetail;
+        background-color: aqua;
+    }
+
+}
+    
+//...........media........
+span.iconMenu > i {
+    height: 9px;
+      }
+  .title{
+      size:2px;
+  }
+  @media (min-width: 641px) {
+
+      span.iconMenu {display:none}
+     .oror {display:inline-block}
+  }
+  
+  @media (max-width: 640px) {
+    div.topnav{  
+        background-color: black;
+    span.iconMenu {
+        
+            size:2px;
+            font-family: fantasy;
+        .lineIcome{
+           float: right;
+            
+        }
+        .title{
+            justify-self: center;
+            font-size:40px;
+            
+        }
+        }
+    }
+      
+      .oror {
+          
+        display:none
+    }
+  }

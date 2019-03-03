@@ -1,0 +1,99 @@
+
+
+// //     mainContent{
+// //         grid-area: mainContent;
+// //         background-color: gray;
+// //         border: black 2px solid;
+// //     }
+   
+// // }
+// // mat-grid-tile {
+// //     background: rgb(33, 132, 165);
+// //   }
+// html{
+//     margin:0px;
+//     background-color: yellow;
+//     display: grid;
+//     grid-template-columns: 20% 80%;
+//     grid-template-rows:100px;
+//     grid-template-areas: 
+//         "mainSidebars mainHeaderContents" ;
+
+//         .mainSidebar{
+//             grid-area: mainSidebar;
+//             background-color: red;
+//             border: black 5px solid;
+//     } 
+//     .mainHeaderContaintt{
+//         grid-area: mainHeaderContent;
+//         background-color: red;
+//         border: black 2px solid;
+//         }
+//     }
+.screen{
+    
+    margin: 0px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10% auto;
+    // grid-template-rows: auto;
+    grid-gap: 5px;
+    border-color: black;
+    background-color: white;
+    grid-template-areas: 
+    "mainSideBar mainHeaderContent";
+    
+    .mainSidebar{
+        // padding: 0px;
+        // margin: 0px;
+        // display: grid;
+        grid-area: mainSideBar;
+        justify-self: center;
+     
+        
+    }
+    .mainHeaderContent{
+   
+    grid-area: mainHeaderContent;
+    
+    }
+  
+
+    
+}
+// ------------media query........................
+@media screen and (max-width:39.9375em ){
+
+
+    .screen{
+    
+        margin: 0px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 23% auto;
+        // grid-template-rows: auto;
+        grid-gap: 2%;
+        border-color: black;
+        background-color: white;
+        grid-template-areas: 
+        "mainSideBar mainHeaderContent";
+        
+        .mainSidebar{
+            // padding: 0px;
+            // margin: 0px;
+            // display: grid;
+            grid-area: mainSideBar;
+            justify-self: center;
+         
+            
+        }
+        .mainHeaderContent{
+       
+        grid-area: mainHeaderContent;
+        
+        }
+      
+    
+        
+    }
+}

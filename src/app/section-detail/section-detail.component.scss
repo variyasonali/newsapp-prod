@@ -1,0 +1,64 @@
+// .container {
+//     // margin-left: 160px; /* Same as the width of the sidenav */
+//     font-size: 28px; /* Increased text to enable scrolling */
+//     display: inline-block;
+//     // margin-left: 0px;
+
+//     // padding: 0px;
+
+
+.sectionDetail{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  grid-template-areas:
+  "sectionDetails"; 
+
+    .sectionDetails{
+    border-left: 6px solid tomato;
+    background-color: whitesmoke;
+   
+    border-style: outset;
+
+  }
+  .readMore{
+    float: right;
+    width:20%;
+  }
+}
+
+//...........media........//
+
+span.read > i {
+    height: 9px;
+      }
+  
+  @media (min-width: 641px) {
+
+    span.read{display:none;}
+    .readMore{display:inline-block;}
+  }
+  
+  @media (max-width: 640px) {
+    span.read{  
+        display: inline-block;
+        color: red;
+        background-color: black;
+        .informationIcon{
+          
+          top:0px;
+        }
+   }
+    .readMore{
+      display:none;
+            font-family: fantasy;
+       
+       
+        }
+    }
+ 
+      
+
+ 
+ 

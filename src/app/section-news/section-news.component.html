@@ -1,0 +1,21 @@
+<div class="container">
+        <mat-dialog-actions class="example-button-row">
+       
+                <!-- <a mat-raised-button color="warn" (click)="onCloseConfirm()">CONFIRM</a> -->
+                <i  style="color: tomato" (click)="onCloseCancle()" class="fas fa-window-close fa-2x cancle"></i>
+               
+        </mat-dialog-actions>
+
+        <mat-dialog-content class="contain">
+       
+                <img class="image"src="{{data.url}}" alt="Smiley face" >
+                <!-- <strong class="data">{{data.caption}}</strong>   -->
+            
+            </mat-dialog-content>
+    <h2 class="title">
+    {{data.caption}}
+    </h2>
+    
+    <hr>
+    
+</div>

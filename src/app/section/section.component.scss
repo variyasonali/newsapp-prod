@@ -1,0 +1,183 @@
+.mainSidebar{
+    display: grid;
+    
+    grid-auto-rows: 100px auto;
+    grid-gap: 8px;
+   
+    grid-template-areas: 
+    "icons"
+    "menu";
+    div.icons{
+        grid-area: icons;
+       
+       
+        .mainIcon{
+           
+           position: absolute;
+           top:0px;
+           left:2%;
+           
+           
+        }
+    }
+    .menu{
+        grid-area: menu;
+        text-transform: capitalize;
+
+
+       
+            
+            .button{
+            
+            width: 96%;
+            margin: 2%;
+            }
+                
+           
+    }
+
+}
+ //........media query.............
+ @media screen and (max-width:39.9375em ){
+    .mainSidebar{
+        display: grid;
+        
+        grid-auto-rows: 100px auto;
+        grid-gap: 8px;
+       
+        grid-template-areas: 
+        "icons"
+        "menu";
+        div.icons{
+            grid-area: icons;
+           
+           
+            .mainIcon{
+               
+               position: absolute;
+               top:0px;
+               left:2%;
+               
+               
+            }
+        }
+        .menu{
+            grid-area: menu;
+            text-transform: capitalize;
+    
+    
+            .buttons { 
+                
+                .button{
+                
+                width: 96%;
+                margin: 2%;
+                }
+            }                
+               
+        }
+    
+    } 
+
+ }
+
+
+
+//     // justify-content: center;
+        //     // text-align: center;
+        //     // margin-left: 2px;
+        //     margin-top: 15px;
+        //     // padding: 6px 8px 6px 16px;
+             
+        //     //   text-transform: capitalize;
+        //       font-size: 15px;
+        //       color: white;
+        //         display: inline-block;
+           
+        //     }
+            
+        //     .button :hover {
+        //       color: black;
+        //       background-color: #f1f1f1;
+        //     }
+
+// .sidenav {
+// //   float: left;
+//   height: 100%;
+   
+//   // display: inline-block;
+// //   position: fixed;
+// //   z-index: 1;
+//     // position:absolute;
+//     // left:0px;
+//     // top:0px;
+// //   overflow-x: hidden;
+  
+// }
+
+
+
+// // .main {
+// //   margin-left: 160px; /* Same as the width of the sidenav */
+// //   font-size: 28px; /* Increased text to enable scrolling */
+// //   padding: 0px 10px;
+// // }
+
+// @media screen and (max-height: 450px) {
+//   .sidenav {padding-top: 15px;}
+//   .sidenav a {font-size: 18px;}
+// }
+// .subSidebar{
+//     margin-top: 0px;
+//     display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     grid-template-rows: 30% auto;
+//     grid-gap: 1px;
+//     position: relative;
+//     justify-content: center;
+//     // display: flex;
+//     // justify-content: center;
+//     // width: 100%;
+// }
+// .span-row-11{grid-row: span 11 / auto;}
+
+// div.icons{   
+// // padding: 0px;
+// text-align: center; 
+
+// position:relative;
+   
+  
+//     left:1px;
+//     top:1px;
+// }
+// div.icon{
+//     margin: 0px;
+//     justify-self: center;
+    
+// .mainIcon{
+//     margin: 0px;
+//     // display: flex;
+//     // justify-content: center;
+//     // width: 100%;
+//     // position:absolute;
+//     // left:2px;
+//     // top:0px;
+    
+// }}
+
+// .fab fa-html5 mainIcon{
+//     display: flex;
+//     justify-content: center;
+//     width: 100%;
+//     // position:absolute;
+//     // left:5px;
+//     // top:0px;
+// }
+
+// .subSidebar{
+//     .icons{
+//         .icon{
+
+//         }
+//     }

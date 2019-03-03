@@ -1,0 +1,34 @@
+<div class="mainSidebar">
+    <div class="menu">        
+        <button class="mat-raised-button button" color="warn" (click)="onSelect(section)">
+                {{section.sectionName}}
+        </button>
+    </div>
+
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <div *ngFor="let section of sections ">
+            <button class="mat-raised-button" color="warn" (click)="onSelect(section)">
+              {{section.sectionName}}
+            </button>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <input matInput placeholder="First name">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Age">
+      </mat-form-field>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+   
+ 
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
