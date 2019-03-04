@@ -1,15 +1,42 @@
-<div class="sectionDetail">
-
-
-  <div *ngIf="!this.subsectionx ; else subsectionNews">
-    <div *ngFor="let news of sectionNewsResult">
-      <div *ngIf="news.multimedia[0]">
-        <div class="sectionDetails">
-          <img class="image" src="{{news.multimedia[0].url}}" />
-          <span class="title">{{news.title}}</span>
-          <mat-card-content class="readMore">
+<!-- TOTAL SECTION dETAILS -->
+<div class="sectionDetail" *ngIf="!this.subsection1 ; else subsectionNews">
+  <div *ngFor="let news of sectionNewsResult">
+    <div *ngIf="news.multimedia[0]">
+      <!-- each section detail -->
+      
+        <mat-card class="example-card sectionDetails">
+          <mat-card-header class="header">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>news</mat-card-title>
+            <mat-card-subtitle>on top</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-4x-image class="image" src="{{news.multimedia[0].url}}" />
+          <mat-card-content class="descripation">
+            <span>{{news.title}}</span>
+          </mat-card-content>
+          <div class="Or">
+          <mat-card-actions class="footer">
             <div *ngIf="news.multimedia[0].caption && news.multimedia[1].url ">
-              <button class="button" mat-raised-button color="warn" (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)">readMore</button>
+              <button mat-button (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)">READ MORE</button>
+            </div>
+          </mat-card-actions>
+        
+        <span class="read" (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)" style="color: tomato">
+          <i class="fas fa-info-circle  informationIcon"></i>
+        </span>
+          </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+ 
+
+  <!-- <img class="image" src="{{news.multimedia[0].url}}" />
+          <span class="descripation">{{news.title}}</span>
+          <mat-card-content class="footer">
+            <div *ngIf="news.multimedia[0].caption && news.multimedia[1].url ">
+              <a (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)">readMore</a>
             </div>
           </mat-card-content>
           <span class="read" (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)" style="color: tomato">
@@ -18,25 +45,41 @@
         </div>
       </div>
     </div>
-  </div>
+
+  </div> -->
+  <!-- fliterd news -->
   <ng-template #subsectionNews>
-    <div class="sectionDetails" *ngFor="let news of sectionNewsResult">
-      <div class="div1" *ngIf="this.subsectionx === news.subsection && news.multimedia[0]">
-        <img src="{{news.multimedia[0].url}}" />
-        <span>{{news.title}}</span>
+
+    <div class="sectionDetail" *ngFor="let news of sectionNewsResult">
+
+      <mat-card class="example-card sectionDetails" *ngIf="this.subsection1 === news.subsection && news.multimedia[0] && news.title !=''">
+        <!-- <div (onload)="doSomething()"> -->
+            <mat-card-header class="header">
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>news</mat-card-title>
+                <mat-card-subtitle>on top</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-4x-image class="image" src="{{news.multimedia[0].url}}" />
+              <mat-card-content class="descripation">
+                  <span>{{news.title}}</span>
+                </mat-card-content>
         <div class="Or">
-          <mat-card-content class="readMore">
-            <div *ngIf="news.multimedia[0].caption && news.multimedia[1].url">
-              <button mat-raised-button (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)">ReadMore</button>
-            </div>
-          </mat-card-content>
+            <mat-card-actions class="footer">
+                <div *ngIf="news.multimedia[0].caption && news.multimedia[1].url ">
+                  <button mat-button (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)">READ MORE</button>
+                </div>
+              </mat-card-actions>
+           
 
-          <span class="read" style="color: tomato"><i class="fas fa-info-circle fa-2x"></i>
-
-          </span>
+            <span class="read" (click)="openDialog(news.multimedia[0].caption,news.multimedia[1].url)" style="color: tomato">
+                <i class="fas fa-info-circle  informationIcon"></i>
+              </span>
         </div>
-      </div>
-    </div>
+      </mat-card>
+        </div>
+     
+      </ng-template>
+    
 
-  </ng-template>
-</div>
+    <!-- <section-app [subSectionValue]=this.subsectionx></section-app> -->
+ 

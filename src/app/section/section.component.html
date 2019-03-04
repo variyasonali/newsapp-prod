@@ -4,7 +4,7 @@
       <span style="color:dodgerblue">
         
         <i class="fas fa-home fa-3x"></i>
-        
+      
       </span>  
       </div>
     
@@ -14,10 +14,10 @@
   <div class="menu">
 
     <div class="sidebar" *ngFor="let Section of sections">
-      <button class="btn btn-primary" (click)="onSelect(subSection)" *ngIf="subSection !=''">
+      <button class="btn btn-primary" (click)="onSelect(Section)" *ngIf="subSection !=''">
 
         {{Section.sectionName}}
-
+        <!-- ;changeSubsection() -->
       </button>
 
     </div>

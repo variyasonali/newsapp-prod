@@ -24,6 +24,8 @@ export class SubsectionComponent implements OnInit {
   public output = [];
   public ss: string;
   public sectionNews1:any;
+  public subsectionValues:any;
+  public subsection2:any;
   public uniqueSubSections1:any;
   public subsection1:any;
   public subSectionretrx:any;
@@ -32,12 +34,14 @@ export class SubsectionComponent implements OnInit {
   public nonEmpty:any;
   public isNullOrEmpty:any;
   dialogResult:"";
-  constructor(private router: Router, private _newsService: NewsService, private route: ActivatedRoute, private sectionname: SectionDetailComponent, private sectionDetailComponent:SectionDetailComponent,public dialog:MatDialog) {
-
-  }
+  data:string;
+  constructor(private router: Router, private _newsService: NewsService, private route: ActivatedRoute, private sectionname: SectionDetailComponent, private sectionDetailComponent:SectionDetailComponent,public dialog:MatDialog) {}
 
   ngOnInit() {
     
+    this._newsService.subsection1.subscribe(subsection1 => this.subsection1 = subsection1)
+    // this.subsection1="";
+    console.log(this.subsection1);
 
     // this._newsService.getSectionNews("home")
     // .subscribe(
@@ -117,7 +121,7 @@ export class SubsectionComponent implements OnInit {
   
   openDialog(){
     // let data=[caption,url];
-    
+    this._newsService.subsection1.subscribe(subsection1 => this.subsection1 =subsection1);
     let dialogREf= this.dialog.open(SubsectionComponent,{
       height:"500px",
       // data: { caption:[caption] , url:url},
@@ -132,14 +136,16 @@ export class SubsectionComponent implements OnInit {
  
   
   onSelect(subSection) {
-    
-
+    console.log(subSection);
+    this._newsService.updateSubsection(subSection);
     // this.router.navigate(['{{this.route}}',subSection]);
-    
-    this.subsection1 = subSection;
-      console.log(this.subsection1);
+    this._newsService.subsection1.subscribe(subsectionValues => this.subsectionValues = subsectionValues);
+    this.subsection2 =  this.subsectionValues;
+    console.log(this.subsectionValues);
+      console.log(this.subsection2);
       this.router.navigate([subSection], { relativeTo: this.route });
-    this.p=true;
+      
+    // this.p=true;
     
     
     //return this.subsection;

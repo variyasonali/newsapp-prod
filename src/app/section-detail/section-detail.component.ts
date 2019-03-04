@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NewsService } from '../news.service';
 
 import 'rxjs/Rx';
@@ -25,12 +25,14 @@ export class SectionDetailComponent implements OnInit {
   password;
   display='none'; //default Variable
   public sectionName: string;
-
+  public subsection:string;
   public sectionNewsRaw: any;
   public SectionNews: any;
+  public  urlSegment:any;
   public subSectionretr: any;
   public sectionNewsResult:any;
   public sex:any;
+  public subsection1:any;
   @Input() uniqueSubsections:string;
   @Input() subSectionretrx:any;
   @Input() subsectionx:any;
@@ -39,10 +41,12 @@ export class SectionDetailComponent implements OnInit {
   dialogResult:"";
 
 
-  constructor(private route: ActivatedRoute, private _newsService: NewsService, public dialog:MatDialog) {
+  constructor(private route: ActivatedRoute, private _newsService: NewsService, public dialog:MatDialog,private router:Router) {
 
   }
   ngOnInit() {
+    console.log(this.subsectionx);
+    // console.log(this.route.snapshot.url[2].path);
 
     
     //console.log(this.uniqueSubsections);
@@ -50,7 +54,7 @@ export class SectionDetailComponent implements OnInit {
     // this.sex= this.route.snapshot.paramMap.get('sectionName');
     // console.log(this.sex);
     // this.route.paramMap.subscribe(params => {
-    //   console.log(params);
+     
     this.route.paramMap.subscribe(paramsroot =>{
       this.sectionName = paramsroot.get('sectionName');
       console.log(this.sectionName)
@@ -58,9 +62,13 @@ export class SectionDetailComponent implements OnInit {
       // console.log(this.route.firstChild.params);
       // console.log(this.route.firstChild.pathFromRoot);
       //if (this.route.firstChild.paramMap != null) {
-        
+        console.log(paramsroot);
       //}
 
+      this.route.paramMap.subscribe(paramsroot =>{
+        this.subsection = paramsroot.get('subsection');
+        console.log(this.subsection)// Print the parameter to the console. 
+    });
     
     // this.route.paramMap.subscribe(params => {
     //   console.log(params)
@@ -84,11 +92,14 @@ export class SectionDetailComponent implements OnInit {
 
   
   
-  
+  this._newsService.subsection1.subscribe(subsection1 => this.subsection1 = subsection1);
   
   }
   
-
+  doSomething(){
+    this.subsectionx="";
+    console.log(this.subsectionx);
+   }
 
   openDialog(caption,url){
     // let data=[caption,url];

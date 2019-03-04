@@ -67,18 +67,18 @@
     }
     .sectionDetail{
         grid-area: sectionDetail;
-        background-color: aqua;
+        background-color:whitesmoke;
     }
 
 }
     
 //...........media........
-span.iconMenu > i {
-    height: 9px;
-      }
-  .title{
-      size:2px;
-  }
+// span.iconMenu > i {
+//     height: 9px;
+//       }
+//   .title{
+//       size:2px;
+//   }
   @media (min-width: 641px) {
 
       span.iconMenu {display:none}
