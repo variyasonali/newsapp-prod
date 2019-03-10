@@ -33,7 +33,7 @@ export class NewsService {
  
   updateSubsection(subsection){
     console.log(subsection);
-    alert("update subsection");
+    // alert("update subsection");
    this.subsectionvalue=subsection;
    console.log(this.subsectionvalue);
    this.messageSource.next(this.subsectionvalue);
@@ -42,10 +42,10 @@ export class NewsService {
     this.subsectionvalue="";
     this.messageSource.next(this.subsectionvalue);
     // this.subsection.next("");
-    alert("remove subsection");
+    // alert("remove subsection");
   }
   remove(){
     this.subsectionvalue="";
-    alert("remove");
+    // alert("remove");
   }
 }

@@ -101,13 +101,13 @@ export class SectionDetailComponent implements OnInit {
     console.log(this.subsectionx);
    }
 
-  openDialog(caption,url){
+  openDialog(caption,url:string){
     // let data=[caption,url];
     
     let dialogREf= this.dialog.open(SectionNewsComponent,{
       height:"100%",
-      // data: { caption:[caption] , url:url},
-      data: { caption:caption, url:url},
+      data: { caption:caption , link:url},
+      // data: { caption:caption, url:url},
       width:"100%",
       
     },);
